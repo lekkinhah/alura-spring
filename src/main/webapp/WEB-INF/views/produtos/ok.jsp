@@ -7,7 +7,6 @@
 <title>Casa do Código</title>
 </head>
 <body>
-<h1>Nova Página em JSP</h1>
-
+	<h1>Produto cadastrado com sucesso!</h1>
 </body>
 </html>
