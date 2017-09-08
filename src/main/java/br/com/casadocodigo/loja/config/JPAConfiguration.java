@@ -2,12 +2,17 @@ package br.com.casadocodigo.loja.config;
 
 import java.util.Properties;
 
+import javax.persistence.EntityManagerFactory;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+@EnableTransactionManagement
 public class JPAConfiguration {
 	
 	@Bean
@@ -20,7 +25,7 @@ public class JPAConfiguration {
 		
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("root");
-		dataSource.setPassword("");
+		dataSource.setPassword("senha5");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/casadocodigo");
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		
@@ -34,9 +39,13 @@ public class JPAConfiguration {
 		
 		factoryBean.setJpaProperties(properties);
 		
-		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.models");
+		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.model");
 
         return factoryBean;
 	}
 
+	@Bean
+    public JpaTransactionManager transactionManager(EntityManagerFactory emf){
+        return new JpaTransactionManager(emf);
+    }
 }
