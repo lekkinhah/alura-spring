@@ -50,8 +50,6 @@ public class Produto {
 	}
 	public void setPrecos(List<Precos> precos) {
 		this.precos = precos;
-	}
-	
-	
+	}	
 
 }
