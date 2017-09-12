@@ -16,7 +16,7 @@ public class Produto {
 	
 	private String titulo;
 	private String descricao;
-	private Integer pagina;
+	private int pagina;
 	
 	@ElementCollection
 	private List<Precos> precos;
@@ -27,7 +27,7 @@ public class Produto {
 	public String getDescricao() {
 		return descricao;
 	}
-	public Integer getPagina() {
+	public int getPagina() {
 		return pagina;
 	}
 	public void setTitulo(String titulo) {
@@ -36,7 +36,7 @@ public class Produto {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public void setPagina(Integer pagina) {
+	public void setPagina(int pagina) {
 		this.pagina = pagina;
 	}
 	public int getId() {
