@@ -13,24 +13,31 @@
 	<form:form action="/casadocodigo/produtos" method="post" commandName="produto">
 		<div>
 			<label>Título</label>
-			<input type="text" name=titulo>
+			<form:input path="titulo"/>
 			<form:errors path="titulo" />
 		</div>
 		<div>
 	        <label>Descrição</label>
-	        <textarea rows="10" cols="20" name="descricao"></textarea>
+	        <form:textarea path="descricao"/>
 	        <form:errors path="descricao"/> 
 	    </div>
 	    <div>
 	        <label>Páginas</label>
-	        <input type="text" name="pagina" />
+	        <form:input path="pagina"/>
 	        <form:errors path="pagina" />
 	    </div>
+	    <div>
+	    	<label>Data de Lançamento</label>
+	    	<form:input path="dataLancamento"/>
+	    	<form:errors path="dataLancamento" />
+	    </div>
+	    <hr>
+	    <h3>Cadastre os valores do produto</h3>
 	    <c:forEach items="${tipos}" var="precos" varStatus="status">
 	    	<div>
 		        <label>${precos}</label>
-		        <input type="text" name="precos[${status.index}].valor" />
-		        <input type="hidden" name="precos[${status.index}].tipo" value="${precos}" />
+		    	<form:input path="precos[${status.index}].valor"/>
+		        <form:hidden path="precos[${status.index}].tipo" value="${precos}"/>
 		    </div>
 	    </c:forEach>
 	    
