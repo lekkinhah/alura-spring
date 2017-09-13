@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<form:form action="/casadocodigo/produtos" method="post" commandName="produto">
+	<form:form action="/casadocodigo/produtos" method="post" commandName="produto" enctype="multipart/form-data">
 		<div>
 			<label>Título</label>
 			<form:input path="titulo"/>
@@ -30,6 +30,10 @@
 	    	<label>Data de Lançamento</label>
 	    	<form:input path="dataLancamento"/>
 	    	<form:errors path="dataLancamento" />
+	    </div>
+	    <div>
+	    	<label>Sumário: </label>
+	    	<input type="file" name="sumario">
 	    </div>
 	    <hr>
 	    <h3>Cadastre os valores do produto</h3>
